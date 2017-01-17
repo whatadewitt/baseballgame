@@ -19,12 +19,14 @@ export default (state = initialState, action) => {
     case 'UPDATE':
       return {
         teams: state.teams.map( ( team ) => {
-          if ( team.key === action.team ) {
-            team.wins = action.val
+          if ( team.key === action.value.team ) {
+            team.wins = parseInt(action.value.val, 10)
           }
+          return team
         }),
-        total: state.teams.reduce( (a, b) => { return a.wins + b.wins }, 0),
+        total: state.teams.reduce( (a, { wins }) => { return a + wins }, 0)
       }
+    
     default:
       return state
   }
