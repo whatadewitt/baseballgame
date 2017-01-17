@@ -33,4 +33,7 @@ class Team extends Component {
   }
 }
 
-export default connect(null, { update })(Team)
+export default connect(
+  null, 
+  { update }
+)(Team)
