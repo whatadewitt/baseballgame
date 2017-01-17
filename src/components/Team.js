@@ -1,4 +1,6 @@
 import React, { Component, PropTypes } from 'react'
+import { connect } from 'react-redux'
+import { update } from '../actions'
 
 class Team extends Component {
   static propTypes = {
@@ -19,10 +21,16 @@ class Team extends Component {
     return (
       <div>
         <div>{team.name}</div>
-        <input type="number" value={team.wins} onChange={this.changeTotal.bind(this)} />
+        <input 
+          type="number" 
+          min="0" 
+          max="162"
+          value={team.wins} 
+          onChange={this.changeTotal.bind(this)} 
+        />
       </div>
     )
   }
 }
 
-export default Team
+export default connect(null, { update })(Team)

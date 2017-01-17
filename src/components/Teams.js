@@ -3,12 +3,11 @@ import Team from './Team'
 
 class Teams extends Component {
   static propTypes = {
-    teams: PropTypes.array.isRequired,
-    update: PropTypes.func.isRequired
+    teams: PropTypes.array.isRequired
   }
 
   render() {
-    const { teams, update } = this.props;
+    const { teams } = this.props;
 
     return (
       <ul className="teams">
@@ -16,7 +15,6 @@ class Teams extends Component {
           <Team 
             key={team.key}
             team={team}
-            update={update}
           />
         )}
       </ul>

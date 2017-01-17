@@ -1,22 +1,20 @@
 import React, { PropTypes } from 'react'
-import { bindActionCreators } from 'redux'
+// import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 
 import Counter from './components/Counter'
 import Teams from './components/Teams'
-import * as Actions from './actions'
 
-const App = ({ total, teams, actions }) => (
+const App = ({ total, teams }) => (
   <div>
     <Counter total={ total } />
-    <Teams teams={ teams } update={actions.update} />
+    <Teams teams={ teams } />
   </div>
 )
 
 App.propTypes = {
   total: PropTypes.number.isRequired,
-  teams: PropTypes.array.isRequired,
-  actions: PropTypes.object.isRequired
+  teams: PropTypes.array.isRequired
 }
 
 const mapStateToProps = state => ({
@@ -24,11 +22,7 @@ const mapStateToProps = state => ({
   teams: state.teams
 })
 
-const mapDispatchers = dispatch => ({
-  actions: bindActionCreators(Actions, dispatch)
-})
-
 export default connect(
   mapStateToProps,
-  mapDispatchers
+  null
 )(App)
