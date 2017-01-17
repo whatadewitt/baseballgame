@@ -2,12 +2,12 @@ const initialState = {
   total: 0,
   teams: [
     {
-      key: 'atl',
-      name: 'Atlanta Braves',
-      wins: 0
-    }, {
       key: 'ari',
       name: 'Arizona Diamondbacks',
+      wins: 0
+    }, {
+      key: 'atl',
+      name: 'Atlanta Braves',
       wins: 0
     }, {
       key: 'bal',
@@ -58,20 +58,24 @@ const initialState = {
       name: 'The The Angels Angels',
       wins: 0
     }, {
+      key: 'mia',
+      name: 'Miami Marlins',
+      wins: 0
+    }, {
+      key: 'mil',
+      name: 'Milwaukee Brewers',
+      wins: 0
+    }, {
+      key: 'min',
+      name: 'Minnesota Twins',
+      wins: 0
+    }, {
       key: 'nym',
       name: 'New York Mets',
       wins: 0
     }, {
       key: 'nyy',
       name: 'New York Yankees',
-      wins: 0
-    }, {
-      key: 'mia',
-      name: 'Miami Marlins',
-      wins: 0
-    }, {
-      key: 'min',
-      name: 'Minnesota Twins',
       wins: 0
     }, {
       key: 'oak',

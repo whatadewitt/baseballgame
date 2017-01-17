@@ -16,16 +16,16 @@ class Team extends Component {
   }
 
   render() {
-    const { team } = this.props;
+    const { name, wins } = this.props.team;
 
     return (
       <div>
-        <div>{team.name}</div>
+        <div>{ name }</div>
         <input 
           type="number" 
           min="0" 
           max="162"
-          value={team.wins} 
+          value={ wins } 
           onChange={this.changeTotal.bind(this)} 
         />
       </div>

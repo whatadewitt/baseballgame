@@ -5,7 +5,7 @@ import { Provider } from 'react-redux'
 import App from './App'
 import game from './reducers'
 
-const store = createStore(game)
+const store = createStore(game, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__())
 
 render(
   <Provider store={store}>
