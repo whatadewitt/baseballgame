@@ -13,12 +13,12 @@ const App = ({ total, teams }) => (
 )
 
 App.propTypes = {
-  total: PropTypes.number.isRequired,
+  total: PropTypes.number,
   teams: PropTypes.array.isRequired
 }
 
 const mapStateToProps = state => ({
-  total: state.total,
+  total: state.teams.reduce( (a, { wins }) => a + wins, 0),
   teams: state.teams
 })
 

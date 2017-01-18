@@ -1,5 +1,4 @@
 const initialState = {
-  total: 0,
   teams: [
     {
       key: 'ari',
@@ -131,13 +130,12 @@ export default (state = initialState, action) => {
       return {
         teams: state.teams.map( ( team ) => {
           if ( team.key === action.value.team ) {
-            team.wins = parseInt(action.value.val, 10)
+            return {...team, wins: parseInt(action.value.val, 10)}
           }
           return team
-        }),
-        total: state.teams.reduce( (a, { wins }) => { return a + wins }, 0)
+        })
       }
-    
+      
     default:
       return state
   }
